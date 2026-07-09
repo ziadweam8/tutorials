@@ -49,10 +49,11 @@ __int64 __fastcall sub_4777CC0(__int64 a1, __int64 a2, unsigned __int8 a3)
     *(_QWORD *)(v3 + 56) += a2; -> offset 56 decimal which is g->totalbytes 
 fromsourcecode:     g->totalbytes += nsize;
 
-       
+
  v8 = sub_47781C0(a1, (_QWORD **)(v3 + 792), (int)a2 + 64, a2, 1); 
- is offset 792 decimal which isg->allgcopages
-fromsourcecode:         lua_Page* page = newpage(L, &g->allgcopages, offsetof(lua_Page, data) + int(nsize), int(nsize), 1);
+ is offset 792 decimal which is g->allgcopages
+
+fromsourcecode: lua_Page* page = newpage(L, &g->allgcopages, offsetof(lua_Page, data) + int(nsize), int(nsize), 1);
 
 
     *(_QWORD *)(v3 + 8 * v4 + 11312) += a2; is offset 11312 decimal which is g->memcatbytes 
