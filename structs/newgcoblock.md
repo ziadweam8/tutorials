@@ -180,14 +180,17 @@ From the decompilation we can recover several useful members of both `global_Sta
 ### `global_State`
 
 ```cpp
-v5 = *(_QWORD *)(v4 + 464);
+v5 = *(_QWORD *)(v4 + 464); // 0x1d0 freegcopages
 // page = g->freegcopages[sizeClass]
+```
+```cpp
+v3 = *(_QWORD *)(a1 + 16); // 0x10 luastate
 ```
 
 This identifies the location of:
 
-- `global_State::freegcopages`
-- `lua_State::global`
+- `global_State->freegcopages`
+- `lua_State->global`
 
 ---
 
@@ -227,12 +230,11 @@ v7 = (__int64 *)(v6 + v5 + 64);
 
 ---
 
-## Recovered `lua_Page`
-
+so:
 ```cpp
 struct lua_Page
 {
-    lua_Page* listprev;   // unknown offset
+    lua_Page* listprev;   // notincluded
     lua_Page* listnext;   // 0x08
 
     lua_Page* prev;       // 0x10
@@ -246,7 +248,7 @@ struct lua_Page
     int freeNext;         // 0x30
     int busyBlocks;       // 0x34
 
-    char padding[8];
+    char padding[8]; //padding
 
     char data[1];         // 0x40
 };
