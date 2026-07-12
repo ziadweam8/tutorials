@@ -1,4 +1,4 @@
-# `newgcoblock` RE Notes
+# `newgcoblock` 
 
 > Sorry if the write-up is ass. I used chatgpt to help with the writing since im not he best at writing
 >
